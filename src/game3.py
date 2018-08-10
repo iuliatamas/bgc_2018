@@ -46,36 +46,40 @@ def init_game():
     pygame.display.set_caption('Birdzzz')
 
 def play_game():
-    fixed_events = ["R", "D", "R", "D", "R", "D", "R", "D", "R", "D", "R", "D"]
+    L = pygame.USEREVENT
+    R = pygame.USEREVENT + 1
+    U = pygame.USEREVENT + 2
+    D = pygame.USEREVENT + 3
+
+    fixed_events = [R, D, R, D, R, D, R, D, R, D, R, D]
+    delay = 200
+
+    for event in fixed_events:
+        pygame.time.set_timer(event, delay)
+        delay += 200
 
     while not state.quit:
+        bird_x_change = 0
+        bird_y_change = 0
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 state.quit = True
+            elif event.type == L:
+                bird_x_change = -5
+            elif event.type == R:
+                bird_x_change = 5
+            elif event.type == U:
+                bird_y_change = -5
+            elif event.type == D:
+                bird_y_change = 5
 
-            bird_x_change = 0
-            bird_y_change = 0
+        state.bird_x += bird_x_change
+        state.bird_y += bird_y_change
 
-            for event in fixed_events:
-                if event == "L":
-                    bird_x_change = -5
-                if event == "R":
-                    bird_x_change = 5
-                if event == "U":
-                    bird_y_change = 5
-                if event == "D":
-                    bird_y_change = -5
-
-                state.bird_x += bird_x_change
-                state.bird_y += bird_y_change
-
-                clear_screen()
-                display_bird_at(state.bird_x, state.bird_y)
-                pygame.display.update()
-
-                # TODO: find way to correctly slow down between steps
-
-            fixed_events = []
+        clear_screen()
+        display_bird_at(state.bird_x, state.bird_y)
+        pygame.display.update()
 
 
 init_game()
