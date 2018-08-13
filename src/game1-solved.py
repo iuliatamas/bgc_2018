@@ -68,7 +68,7 @@ def play_game():
                 # This checks if the key that the user pressed is the LEFT arrow.
                 if event.key == pygame.K_LEFT:
                     bird_x_change = -5
-                if event.key == pygame.K_RIGHT:
+                elif event.key == pygame.K_RIGHT:  # This can also be an `if` statement.
                     bird_x_change = 5
 
         # This tells pygame to add the amount above to the bird's "x" coordinate.
