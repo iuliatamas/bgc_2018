@@ -98,7 +98,7 @@ def play_game():
                 elif event.key == pygame.K_UP:
                     bird_y_change = -5
                     
-        # This tells pygame to add the amount above to the bird's "x" coordinate.
+        # This tells pygame to add the amount above to the bird's "x" and "y" coordinates.
         state.bird_x += bird_x_change
         state.bird_y += bird_y_change
 
