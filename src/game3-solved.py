@@ -101,7 +101,9 @@ def play_game():
             # stops the game.
             if event.type == pygame.QUIT:
                 state.quit = True
-                
+            
+            # Loop one by one through the list `fixed_events` and move the bird according
+            # to the letter from the list.
             for event in fixed_events:
                 # This is defining a variable for x and y so we can use them later.
                 bird_x_change = 0
