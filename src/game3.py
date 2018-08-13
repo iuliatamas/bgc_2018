@@ -74,14 +74,14 @@ def play_game():
             elif event.type == D:
                 bird_y_change = 5
 
-        state.bird_x += bird_x_change
-        state.bird_y += bird_y_change
+            state.bird_x += bird_x_change
+            state.bird_y += bird_y_change
 
-        clear_screen()
-        display_bird_at(state.bird_x, state.bird_y)
-        pygame.display.update()
+            clear_screen()
+            display_bird_at(state.bird_x, state.bird_y)
+            pygame.display.update()
 
-    fixed_events = []
+        fixed_events = []
 
 init_game()
 play_game()
