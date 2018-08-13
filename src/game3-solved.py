@@ -88,10 +88,11 @@ def play_game():
     """This function is what allows us to interact with the game.
     It responds to the actions of the user and moves the bird!"""
     
-    # TASK #1: Add more elements to this list in order to fly the bird to it's nest! 
-    # Use "R" to move right, "L" to move left, "U" to move up, and "D" to move down. 
-    # A few movements have been coded for you.
-    fixed_events = ["R", "R", "D",]
+    fixed_events = [
+        "R", "R", "D", "R", "D", "R", "D", "R", "D", "R", "D", "R", "D", "R",
+        "D", "R", "R", "R", "R", "U", "R", "R", "U", "U", "U", "U", "U", "U",
+        "U", "L", "L", "L", "L", "L", "L", "D", "D",
+    ]
 
     # This a loop that will run as long as the user does not quit the game.
     while not state.quit:
@@ -100,9 +101,9 @@ def play_game():
             # stops the game.
             if event.type == pygame.QUIT:
                 state.quit = True
-                
+            
             # Loop one by one through the list `fixed_events` and move the bird according
-            # to the letter from the list.    
+            # to the letter from the list.
             for event in fixed_events:
                 # This is defining a variable for x and y so we can use them later.
                 bird_x_change = 0

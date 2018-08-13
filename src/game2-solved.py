@@ -26,7 +26,9 @@ state = GameState()
 
 
 def display_tree_at(x, y):
-    """TASK #2: ADD YOUR DOC-STRING HERE."""
+    """This function is used to tell the computer where
+    to display the tree. It takes an x and y as its inputs
+    and places the tree at those coordinates on the game board."""
     
     state.gameDisplay.blit(state.treeImage, (x,y))
 
@@ -50,7 +52,7 @@ def clear_screen():
     display_tree_at(0, 100)
     display_tree_at(100, 200)
     display_tree_at(200, 300)
-    display_tree_at(300, 400)
+    display_tree_at(500, 400)
 
     display_tree_at(400, 100)
     display_tree_at(500, 200)
@@ -71,6 +73,7 @@ def init_game():
     # Tell pygame what caption to use in the title bar of the game.
     pygame.display.set_caption('Birdzzz')
 
+    
 def play_game():
     """This function is what allows us to interact with the game.
     It responds to the actions of the user and moves the bird!"""
@@ -98,7 +101,7 @@ def play_game():
                 elif event.key == pygame.K_UP:
                     bird_y_change = -5
                     
-        # This tells pygame to add the amount above to the bird's "x" and "y" coordinates.
+        # This tells pygame to add the amount above to the bird's "x" coordinate.
         state.bird_x += bird_x_change
         state.bird_y += bird_y_change
 
