@@ -38,6 +38,8 @@ def clear_screen():
     of the background (sky) and the location of the trees."""
     
     state.gameDisplay.fill(state.white)
+    # TASK #3: Pick one of the trees below, and move it to a new location on the
+    # gameboard.
     display_tree_at(0, 100)
     display_tree_at(100, 200)
     display_tree_at(200, 300)
