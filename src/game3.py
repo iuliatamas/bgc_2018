@@ -14,8 +14,9 @@ class GameState():
 
     clock = pygame.time.Clock()
 
-    birdImage = pygame.image.load('yellow-bird.png')
+    birdImage = pygame.image.load("yellow-bird.png")
     treeImage = pygame.image.load("hearts-tree.png")
+    nestImage = pygame.image.load("nest.png")
     bird_x =  0
     bird_y = 0
 
@@ -26,6 +27,9 @@ def display_tree_at(x, y):
 
 def display_bird_at(x, y):
     state.gameDisplay.blit(state.birdImage, (x,y))
+    
+def display_nest_at(x, y):
+    state.gameDisplay.blit(state.nestImage, (x,y))
 
 def clear_screen():
     state.gameDisplay.fill(state.white)
@@ -33,11 +37,13 @@ def clear_screen():
     display_tree_at(100, 200)
     display_tree_at(200, 300)
     display_tree_at(300, 400)
-
+    display_tree_at(300, 0)
     display_tree_at(400, 100)
     display_tree_at(500, 200)
-    display_tree_at(600, 300)
+    display_tree_at(600, 100)
     display_tree_at(700, 400)
+    
+    display_nest_at(450, 125)
 
 def init_game():
     pygame.init()
@@ -46,23 +52,17 @@ def init_game():
     pygame.display.set_caption('Birdzzz')
 
 def play_game():
-    L = pygame.USEREVENT
-    R = pygame.USEREVENT + 1
-    U = pygame.USEREVENT + 2
-    D = pygame.USEREVENT + 3
-
-    fixed_events = [R, D, R, D, R, D, R, D, R, D, R, D]
-    delay = 200
-
-    for event in fixed_events:
-        pygame.time.set_timer(event, delay)
-        delay += 200
+    # TASK #1: Add more elements to this list in order to fly the bird to it's nest! 
+    # Use "R" to move right, "L" to move left, "U" to move up, and "D" to move down. 
+    # A few movements have been coded for you.
+    fixed_events = ["R", "R", "D",]
 
     while not state.quit:
-        bird_x_change = 0
-        bird_y_change = 0
-
+        
         for event in pygame.event.get():
+            bird_x_change = 0
+            bird_y_change = 0
+            
             if event.type == pygame.QUIT:
                 state.quit = True
             elif event.type == L:
@@ -81,6 +81,7 @@ def play_game():
         display_bird_at(state.bird_x, state.bird_y)
         pygame.display.update()
 
+    fixed_events = []
 
 init_game()
 play_game()
