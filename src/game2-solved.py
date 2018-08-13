@@ -2,6 +2,7 @@ import pygame  # This is the library of code we are using to play the game.
 
 class GameState():
     """This is a 'class' which allows us to store data about our game."""
+    
     quit = False
 
     # Colors we want to use in our game.
@@ -26,6 +27,7 @@ def display_tree_at(x, y):
     """This function is used to tell the computer where
     to display the tree. It takes an x and y as its inputs
     and places the tree at those coordinates on the game board."""
+    
     state.gameDisplay.blit(state.treeImage, (x,y))
 
 def display_bird_at(x, y):
@@ -40,6 +42,7 @@ def clear_screen():
     of the background (sky) and the location of the trees."""
     
     state.gameDisplay.fill(state.white)
+    
     # TASK #3: Pick one of the trees below, and move it to a new location on the
     # gameboard.
     display_tree_at(0, 100)
@@ -54,6 +57,7 @@ def clear_screen():
 
 def init_game():
     """This function starts our game."""
+    
     # Tell pygame to start out game.
     pygame.init()
 
