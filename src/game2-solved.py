@@ -52,7 +52,7 @@ def clear_screen():
     display_tree_at(0, 100)
     display_tree_at(100, 200)
     display_tree_at(200, 300)
-    display_tree_at(300, 400)
+    display_tree_at(500, 400)
 
     display_tree_at(400, 100)
     display_tree_at(500, 200)
