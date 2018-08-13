@@ -19,9 +19,11 @@ class GameState():
     bird_x =  0
     bird_y = 0
 
+    
 # This is the copy of the class we defined above. We will use it in our code
 # to tell pygame information about our game.
 state = GameState()
+
 
 def display_tree_at(x, y):
     """This function is used to tell the computer where
@@ -30,6 +32,7 @@ def display_tree_at(x, y):
     
     state.gameDisplay.blit(state.treeImage, (x,y))
 
+    
 def display_bird_at(x, y):
     """This function is used to tell the computer where
     to move the bird to. It takes an x and y as its inputs
@@ -37,6 +40,7 @@ def display_bird_at(x, y):
     
     state.gameDisplay.blit(state.birdImage, (x,y))
 
+    
 def clear_screen():
     """This function creates the gameboard, include the color
     of the background (sky) and the location of the trees."""
@@ -55,6 +59,7 @@ def clear_screen():
     display_tree_at(600, 300)
     display_tree_at(700, 400)
 
+    
 def init_game():
     """This function starts our game."""
     
@@ -68,6 +73,7 @@ def init_game():
     # Tell pygame what caption to use in the title bar of the game.
     pygame.display.set_caption('Birdzzz')
 
+    
 def play_game():
     """This function is what allows us to interact with the game.
     It responds to the actions of the user and moves the bird!"""
