@@ -8,7 +8,6 @@ class GameState():
     # Colors we want to use in our game.
     black = (0,0,0)
     white = (255,255,255)
-    purple = (128,0,128)
     # TASK #2: Add another color here using RBG code for your favorite color.
 
     # How big we want our game screen to be.
@@ -69,8 +68,6 @@ def play_game():
                 # This checks if the key that the user pressed is the LEFT arrow.
                 if event.key == pygame.K_LEFT:
                     bird_x_change = -5
-                if event.key == pygame.K_RIGHT:
-                    bird_x_change = 5
                 # TASK #1: Add another if statement for when the user presses
                 # the RIGHT arrow. 
 
@@ -79,7 +76,7 @@ def play_game():
 
         # This tells pygame what color to fill the game display.
         # TASK #2: Change the fill color.
-        state.gameDisplay.fill(state.purple)
+        state.gameDisplay.fill(state.white)
         
         # This calls the `diplay_bird_at` function, which tells pygame where to
         # display the bird.
